@@ -70,14 +70,14 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-[#f5821f]/20 border border-[#f5821f]/40 text-[#f5821f] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#E8142D]/20 border border-[#E8142D]/40 text-[#E8142D] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
               <Truck className="w-4 h-4" />
               FedEx Ground Independent Service Provider
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
               Deliver More.{' '}
-              <span className="text-[#f5821f]">Earn More.</span>
+              <span className="text-[#E8142D]">Earn More.</span>
               <br />Grow More.
             </h1>
 
@@ -122,7 +122,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-14 items-center">
             <div>
-              <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Who We Are</p>
+              <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Who We Are</p>
               <h2 className="section-heading mb-5">A FedEx Ground Partner You Can Count On</h2>
               <p className="text-gray-600 leading-relaxed mb-5">
                 Founded in 2019, King Capital Transport is a FedEx Ground Independent Service Provider (ISP) built on a simple belief: take care of your people and the operation takes care of itself.
@@ -130,7 +130,7 @@ export default function HomePage() {
               <p className="text-gray-600 leading-relaxed mb-8">
                 We operate across Missouri, Wisconsin, Montana, North Dakota, and Wyoming — delivering millions of packages a year while building careers for the drivers who make it happen.
               </p>
-              <Link href="/about" className="inline-flex items-center gap-2 text-[#f5821f] font-semibold hover:gap-3 transition-all">
+              <Link href="/about" className="inline-flex items-center gap-2 text-[#E8142D] font-semibold hover:gap-3 transition-all">
                 Our Story <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-[#f5821f] text-white rounded-xl px-6 py-4 shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-[#E8142D] text-white rounded-xl px-6 py-4 shadow-xl">
                 <div className="text-3xl font-bold">5+</div>
                 <div className="text-sm font-medium opacity-90">Years of Growth</div>
               </div>
@@ -156,7 +156,7 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Why KCT</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Why KCT</p>
             <h2 className="section-heading mx-auto">More Than Just a Driving Job</h2>
             <p className="section-sub mx-auto text-center mt-4">
               We built this company from the ground up. Here&apos;s what that means for you.
@@ -165,9 +165,9 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map(b => (
-              <div key={b.title} className="group p-6 rounded-xl border border-gray-100 hover:border-[#f5821f]/30 hover:shadow-lg transition-all duration-200 bg-white">
-                <div className="w-12 h-12 bg-[#f5821f]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#f5821f]/20 transition-colors">
-                  <b.icon className="w-6 h-6 text-[#f5821f]" />
+              <div key={b.title} className="group p-6 rounded-xl border border-gray-100 hover:border-[#E8142D]/30 hover:shadow-lg transition-all duration-200 bg-white">
+                <div className="w-12 h-12 bg-[#E8142D]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#E8142D]/20 transition-colors">
+                  <b.icon className="w-6 h-6 text-[#E8142D]" />
                 </div>
                 <h3 className="font-bold text-[#0f1e3c] text-lg mb-2">{b.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
@@ -181,16 +181,16 @@ export default function HomePage() {
       <section className="bg-[#0f1e3c] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Where We Operate</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Where We Operate</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">6 Locations. 5 States.</h2>
             <p className="text-gray-400 mt-3 text-lg">Find a terminal near you.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {locations.map(loc => (
-              <div key={loc.city} className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-6 py-5 hover:bg-white/10 hover:border-[#f5821f]/40 transition-all">
-                <div className="w-10 h-10 bg-[#f5821f]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-[#f5821f]" />
+              <div key={loc.city} className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-6 py-5 hover:bg-white/10 hover:border-[#E8142D]/40 transition-all">
+                <div className="w-10 h-10 bg-[#E8142D]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-[#E8142D]" />
                 </div>
                 <div>
                   <div className="text-white font-bold text-lg">{loc.city}</div>
@@ -203,7 +203,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA Band ── */}
-      <section className="relative bg-[#f5821f] py-20 overflow-hidden">
+      <section className="relative bg-[#E8142D] py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <Image
             src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1800&q=80"
@@ -218,10 +218,10 @@ export default function HomePage() {
             Applications take less than 5 minutes. Positions are available now at all 6 locations.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://apply.kingcapitalgrp.com" className="inline-flex items-center gap-2 bg-white text-[#f5821f] hover:bg-gray-100 font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
+            <a href="https://apply.kingcapitalgrp.com" className="inline-flex items-center gap-2 bg-white text-[#E8142D] hover:bg-gray-100 font-bold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg">
               Apply Now <ChevronRight className="w-5 h-5" />
             </a>
-            <Link href="/careers" className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#f5821f] font-bold px-8 py-4 rounded-lg text-lg transition-colors">
+            <Link href="/careers" className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#E8142D] font-bold px-8 py-4 rounded-lg text-lg transition-colors">
               See Open Positions
             </Link>
           </div>

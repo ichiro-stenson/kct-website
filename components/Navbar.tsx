@@ -32,7 +32,7 @@ export default function Navbar() {
             <Image src="/kct-logo.png" alt="King Capital Transport" width={40} height={40} className="object-contain" />
             <div className="hidden sm:block">
               <div className="text-white font-bold text-lg leading-tight">King Capital</div>
-              <div className="text-[#f5821f] text-xs font-semibold tracking-widest uppercase">Transport</div>
+              <div className="text-[#E8142D] text-xs font-semibold tracking-widest uppercase">Transport</div>
             </div>
           </Link>
 
@@ -49,7 +49,7 @@ export default function Navbar() {
             ))}
             <a
               href="https://apply.kingcapitalgrp.com"
-              className="ml-3 bg-[#f5821f] hover:bg-[#d96e10] text-white font-semibold px-5 py-2 rounded-lg text-sm transition-colors"
+              className="ml-3 bg-[#E8142D] hover:bg-[#C0101F] text-white font-semibold px-5 py-2 rounded-lg text-sm transition-colors"
             >
               Apply Now
             </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
           ))}
           <a
             href="https://apply.kingcapitalgrp.com"
-            className="block mt-3 bg-[#f5821f] hover:bg-[#d96e10] text-white font-semibold px-5 py-3 rounded-lg text-sm text-center transition-colors"
+            className="block mt-3 bg-[#E8142D] hover:bg-[#C0101F] text-white font-semibold px-5 py-3 rounded-lg text-sm text-center transition-colors"
           >
             Apply Now
           </a>

@@ -72,10 +72,10 @@ export default function CareersPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f1e3c]/80 to-[#0f1e3c]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Careers</p>
+          <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Careers</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-5">
             Drive With KCT.<br />
-            <span className="text-[#f5821f]">Build Something Real.</span>
+            <span className="text-[#E8142D]">Build Something Real.</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl leading-relaxed mb-8">
             We&apos;re not just filling seats. We&apos;re building careers. If you want steady work, competitive pay, and a team that actually cares — you&apos;re in the right place.
@@ -91,22 +91,22 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center gap-3">
-              <div className="w-14 h-14 bg-[#f5821f]/10 rounded-2xl flex items-center justify-center">
-                <DollarSign className="w-7 h-7 text-[#f5821f]" />
+              <div className="w-14 h-14 bg-[#E8142D]/10 rounded-2xl flex items-center justify-center">
+                <DollarSign className="w-7 h-7 text-[#E8142D]" />
               </div>
               <h3 className="font-bold text-[#0f1e3c] text-lg">Competitive Pay</h3>
               <p className="text-gray-500 text-sm">Top-of-market rates with consistent routes and no CDL required.</p>
             </div>
             <div className="flex flex-col items-center gap-3">
-              <div className="w-14 h-14 bg-[#f5821f]/10 rounded-2xl flex items-center justify-center">
-                <Clock className="w-7 h-7 text-[#f5821f]" />
+              <div className="w-14 h-14 bg-[#E8142D]/10 rounded-2xl flex items-center justify-center">
+                <Clock className="w-7 h-7 text-[#E8142D]" />
               </div>
               <h3 className="font-bold text-[#0f1e3c] text-lg">Immediate Start</h3>
               <p className="text-gray-500 text-sm">Positions are open now. Apply today, interview this week.</p>
             </div>
             <div className="flex flex-col items-center gap-3">
-              <div className="w-14 h-14 bg-[#f5821f]/10 rounded-2xl flex items-center justify-center">
-                <Truck className="w-7 h-7 text-[#f5821f]" />
+              <div className="w-14 h-14 bg-[#E8142D]/10 rounded-2xl flex items-center justify-center">
+                <Truck className="w-7 h-7 text-[#E8142D]" />
               </div>
               <h3 className="font-bold text-[#0f1e3c] text-lg">6 Locations</h3>
               <p className="text-gray-500 text-sm">Find an opening near you across 5 states.</p>
@@ -119,7 +119,7 @@ export default function CareersPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Open Positions</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Open Positions</p>
             <h2 className="section-heading mx-auto">Now Hiring</h2>
             <p className="section-sub mx-auto text-center mt-4">Positions available at all 6 locations.</p>
           </div>
@@ -131,7 +131,7 @@ export default function CareersPage() {
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-[#0f1e3c] mb-1">{job.title}</h3>
-                      <span className="inline-flex items-center gap-1.5 bg-[#f5821f]/10 text-[#f5821f] text-sm font-semibold px-3 py-1 rounded-full">
+                      <span className="inline-flex items-center gap-1.5 bg-[#E8142D]/10 text-[#E8142D] text-sm font-semibold px-3 py-1 rounded-full">
                         <Clock className="w-3.5 h-3.5" />{job.type}
                       </span>
                     </div>
@@ -148,7 +148,7 @@ export default function CareersPage() {
                       <ul className="space-y-2">
                         {job.requirements.map(r => (
                           <li key={r} className="flex items-start gap-2 text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-[#f5821f] mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-[#E8142D] mt-0.5 flex-shrink-0" />
                             {r}
                           </li>
                         ))}
@@ -159,7 +159,7 @@ export default function CareersPage() {
                       <ul className="space-y-2">
                         {job.locations.map(l => (
                           <li key={l} className="flex items-center gap-2 text-sm text-gray-600">
-                            <MapPin className="w-4 h-4 text-[#f5821f] flex-shrink-0" />
+                            <MapPin className="w-4 h-4 text-[#E8142D] flex-shrink-0" />
                             {l}
                           </li>
                         ))}
@@ -177,13 +177,13 @@ export default function CareersPage() {
       <section className="bg-[#0f1e3c] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">The Benefits</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">The Benefits</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">What You Get at KCT</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-3 max-w-3xl mx-auto">
             {perks.map(p => (
               <div key={p} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-                <CheckCircle className="w-5 h-5 text-[#f5821f] flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#E8142D] flex-shrink-0" />
                 <span className="text-gray-200 text-sm font-medium">{p}</span>
               </div>
             ))}
@@ -195,15 +195,15 @@ export default function CareersPage() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Find Your Terminal</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Find Your Terminal</p>
             <h2 className="section-heading mx-auto">Hiring Near You</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map(loc => (
-              <div key={loc.city} className="rounded-xl border border-gray-100 p-6 hover:border-[#f5821f]/40 hover:shadow-md transition-all">
+              <div key={loc.city} className="rounded-xl border border-gray-100 p-6 hover:border-[#E8142D]/40 hover:shadow-md transition-all">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-[#f5821f]/10 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[#f5821f]" />
+                  <div className="w-10 h-10 bg-[#E8142D]/10 rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-[#E8142D]" />
                   </div>
                   <div>
                     <div className="font-bold text-[#0f1e3c]">{loc.city}, {loc.state}</div>
@@ -218,13 +218,13 @@ export default function CareersPage() {
       </section>
 
       {/* ── Apply CTA ── */}
-      <section className="bg-[#f5821f] py-20">
+      <section className="bg-[#E8142D] py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Apply in 5 Minutes</h2>
           <p className="text-white/80 text-xl mb-8">
             Our application is quick and mobile-friendly. Positions fill fast — apply today.
           </p>
-          <a href="https://apply.kingcapitalgrp.com" className="inline-flex items-center gap-2 bg-white text-[#f5821f] hover:bg-gray-100 font-bold px-10 py-4 rounded-lg text-lg transition-colors shadow-lg">
+          <a href="https://apply.kingcapitalgrp.com" className="inline-flex items-center gap-2 bg-white text-[#E8142D] hover:bg-gray-100 font-bold px-10 py-4 rounded-lg text-lg transition-colors shadow-lg">
             Start Your Application <ChevronRight className="w-5 h-5" />
           </a>
         </div>

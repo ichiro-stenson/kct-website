@@ -56,10 +56,10 @@ export default function SafetyPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f1e3c]/80 to-[#0f1e3c]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Safety</p>
+          <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Safety</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-5">
             Safety Isn&apos;t a<br />
-            <span className="text-[#f5821f]">Slogan Here.</span>
+            <span className="text-[#E8142D]">Slogan Here.</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
             We believe every driver deserves to come home safe every day. That&apos;s not a mission statement — it&apos;s how we run our operation.
@@ -72,7 +72,7 @@ export default function SafetyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-14 items-center">
             <div>
-              <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Our Approach</p>
+              <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Our Approach</p>
               <h2 className="section-heading mb-5">Safety Is Built Into Everything</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 At King Capital Transport, safety isn&apos;t a department — it&apos;s a culture. From the moment a driver starts their morning until they clock out at night, we have systems in place to protect them, the public, and the FedEx network we represent.
@@ -102,14 +102,14 @@ export default function SafetyPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">How We Do It</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">How We Do It</p>
             <h2 className="section-heading mx-auto">Our Safety Program</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-8">
             {pillars.map(p => (
               <div key={p.title} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <div className="w-12 h-12 bg-[#f5821f]/10 rounded-xl flex items-center justify-center mb-5">
-                  <p.icon className="w-6 h-6 text-[#f5821f]" />
+                <div className="w-12 h-12 bg-[#E8142D]/10 rounded-xl flex items-center justify-center mb-5">
+                  <p.icon className="w-6 h-6 text-[#E8142D]" />
                 </div>
                 <h3 className="font-bold text-[#0f1e3c] text-xl mb-3">{p.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{p.desc}</p>
@@ -123,13 +123,13 @@ export default function SafetyPage() {
       <section className="bg-[#0f1e3c] py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Our Standards</p>
+            <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Our Standards</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Our Safety Commitments</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {commitments.map(c => (
               <div key={c} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-                <CheckCircle className="w-5 h-5 text-[#f5821f] flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#E8142D] flex-shrink-0" />
                 <span className="text-gray-200 text-sm font-medium">{c}</span>
               </div>
             ))}

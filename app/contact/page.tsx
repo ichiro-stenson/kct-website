@@ -21,7 +21,7 @@ export default function ContactPage() {
       {/* ── Hero ── */}
       <section className="bg-[#0f1e3c] pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#f5821f] font-semibold uppercase tracking-widest text-sm mb-3">Contact</p>
+          <p className="text-[#E8142D] font-semibold uppercase tracking-widest text-sm mb-3">Contact</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-5">Get in Touch</h1>
           <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
             Whether you have a question about joining our team or want to learn more about what we do — we&apos;d love to hear from you.
@@ -39,9 +39,9 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 {/* Hiring */}
-                <div className="p-6 rounded-xl bg-[#f5821f]/5 border border-[#f5821f]/20">
+                <div className="p-6 rounded-xl bg-[#E8142D]/5 border border-[#E8142D]/20">
                   <h3 className="font-bold text-[#0f1e3c] text-lg mb-2 flex items-center gap-2">
-                    <ChevronRight className="w-5 h-5 text-[#f5821f]" />
+                    <ChevronRight className="w-5 h-5 text-[#E8142D]" />
                     Interested in a Job?
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -55,13 +55,13 @@ export default function ContactPage() {
                 {/* Email */}
                 <div className="p-6 rounded-xl border border-gray-100">
                   <h3 className="font-bold text-[#0f1e3c] text-lg mb-2 flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-[#f5821f]" />
+                    <Mail className="w-5 h-5 text-[#E8142D]" />
                     General Inquiries
                   </h3>
                   <p className="text-gray-600 text-sm mb-3 leading-relaxed">
                     For general questions about the company, partnerships, or anything else:
                   </p>
-                  <a href="mailto:info@kingcapitalgrp.com" className="text-[#f5821f] font-semibold hover:underline">
+                  <a href="mailto:info@kingcapitalgrp.com" className="text-[#E8142D] font-semibold hover:underline">
                     info@kingcapitalgrp.com
                   </a>
                 </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 {/* Facebook */}
                 <div className="p-6 rounded-xl border border-gray-100">
                   <h3 className="font-bold text-[#0f1e3c] text-lg mb-2 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-[#f5821f]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <svg className="w-5 h-5 text-[#E8142D]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     Follow Us on Facebook
                   </h3>
                   <p className="text-gray-600 text-sm mb-3 leading-relaxed">
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     href="https://www.facebook.com/profile.php?id=100068028046482"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#f5821f] font-semibold hover:underline"
+                    className="text-[#E8142D] font-semibold hover:underline"
                   >
                     King Capital Transport on Facebook →
                   </a>
@@ -92,9 +92,9 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-[#0f1e3c] mb-8">Our Locations</h2>
               <div className="space-y-4">
                 {locations.map(loc => (
-                  <div key={loc.city} className="flex items-start gap-4 p-5 rounded-xl border border-gray-100 hover:border-[#f5821f]/30 hover:shadow-sm transition-all">
-                    <div className="w-10 h-10 bg-[#f5821f]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <MapPin className="w-5 h-5 text-[#f5821f]" />
+                  <div key={loc.city} className="flex items-start gap-4 p-5 rounded-xl border border-gray-100 hover:border-[#E8142D]/30 hover:shadow-sm transition-all">
+                    <div className="w-10 h-10 bg-[#E8142D]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <MapPin className="w-5 h-5 text-[#E8142D]" />
                     </div>
                     <div>
                       <div className="font-bold text-[#0f1e3c]">{loc.city}, {loc.code}</div>

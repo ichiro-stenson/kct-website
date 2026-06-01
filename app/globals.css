@@ -3,8 +3,8 @@
 :root {
   --navy: #0f1e3c;
   --navy-light: #1a2f52;
-  --orange: #f5821f;
-  --orange-dark: #d96e10;
+  --orange: #E8142D;
+  --orange-dark: #C0101F;
 }
 
 html {
@@ -21,7 +21,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #f5821f;
+  background-color: #E8142D;
   color: white;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -32,7 +32,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #d96e10;
+  background-color: #C0101F;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 }
 

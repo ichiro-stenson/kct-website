@@ -76,7 +76,7 @@ export default function ContactPage() {
                     Stay up to date with company news, job openings, and team highlights.
                   </p>
                   <a
-                    href="https://www.facebook.com/profile.php?id=100068028046482"
+                    href="https://www.facebook.com/KingCapitalTransport"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#E8142D] font-semibold hover:underline"

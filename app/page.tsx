@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { MapPin, Shield, TrendingUp, Users, Award, Truck, ChevronRight, Star } from 'lucide-react'
 
 const stats = [
-  { value: '300+', label: 'Team Members' },
+  { value: '230+', label: 'Team Members' },
   { value: '6', label: 'Locations' },
   { value: '2019', label: 'Founded' },
   { value: '5', label: 'States' },
@@ -87,7 +87,7 @@ export default function HomePage() {
 
             <div className="flex flex-wrap gap-4">
               <a href="https://apply.kingcapitalgrp.com" className="btn-primary text-lg px-8 py-4">
-                Apply Now — It&apos;s Free
+                Apply Now
                 <ChevronRight className="w-5 h-5" />
               </a>
               <Link href="/about" className="btn-outline text-lg px-8 py-4">
@@ -137,8 +137,8 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80"
-                  alt="Delivery driver with packages"
+                  src="https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Delivery driver with van and packages"
                   fill
                   className="object-cover"
                 />

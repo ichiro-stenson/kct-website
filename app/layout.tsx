@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'King Capital Transport | FedEx Ground Delivery Contractor',
     description: 'Delivering excellence across 6 states. Join our team of 300+ delivery professionals.',
-    url: 'https://kingcapitalgrp.com',
+    url: 'https://kingcapitaltransport.com',
     siteName: 'King Capital Transport',
     type: 'website',
   },
-  metadataBase: new URL('https://kingcapitalgrp.com'),
+  metadataBase: new URL('https://kingcapitaltransport.com'),
 }
 
 export default function RootLayout({

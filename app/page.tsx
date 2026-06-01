@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { MapPin, Shield, TrendingUp, Users, Award, Truck, ChevronRight, Star } from 'lucide-react'
 
 const stats = [
-  { value: '135+', label: 'Team Members' },
+  { value: '165+', label: 'Team Members' },
   { value: '6', label: 'Locations' },
   { value: '2019', label: 'Founded' },
   { value: '5', label: 'States' },

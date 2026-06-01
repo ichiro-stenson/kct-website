@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0f1e3c;
+  --navy-light: #1a2f52;
+  --orange: #f5821f;
+  --orange-dark: #d96e10;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  color: #111827;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f5821f;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #d96e10;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid white;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #0f1e3c;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f1e3c;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 2.5rem;
+  }
+}
+
+.section-sub {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-top: 0.75rem;
+  max-width: 42rem;
+}

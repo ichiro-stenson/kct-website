@@ -38,7 +38,7 @@ function drawBox(page: PDFPage, x: number, y: number, w: number, h: number, fill
 function checkbox(page: PDFPage, x: number, y: number, checked: boolean, font: any) {
   page.drawRectangle({ x, y, width: 10, height: 10, borderColor: BLACK, borderWidth: 1, color: WHITE })
   if (checked) {
-    page.drawText('✓', { x: x + 1, y: y + 1, size: 9, font, color: BLACK })
+    page.drawText('X', { x: x + 1, y: y + 1, size: 9, font, color: BLACK })
   }
 }
 

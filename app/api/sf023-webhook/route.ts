@@ -22,8 +22,8 @@ const ACK = 'Hello API Event Received'
 
 function getSb() {
   return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://iprxetnntchgsekdbyon.supabase.co',
+    process.env.SUPABASE_SERVICE_KEY!
   )
 }
 

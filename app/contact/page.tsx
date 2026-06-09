@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { MapPin, Mail, ChevronRight } from 'lucide-react'
+import { MapPin, Mail, ChevronRight, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact | King Capital Transport',
@@ -63,6 +63,20 @@ export default function ContactPage() {
                   </p>
                   <a href="mailto:info@kingcapitalgrp.com" className="text-[#E8142D] font-semibold hover:underline">
                     info@kingcapitalgrp.com
+                  </a>
+                </div>
+
+                {/* SF-023 Personnel Change Form */}
+                <div className="p-6 rounded-xl border border-[#0f1e3c]/20 bg-[#0f1e3c]/5">
+                  <h3 className="font-bold text-[#0f1e3c] text-lg mb-2 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-[#E8142D]" />
+                    SF-023 Personnel Change Form
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    Need to notify FedEx Ground of an employee assignment change? Submit the SF-023 form online and receive the completed, signed document by email within 24 hours.
+                  </p>
+                  <a href="/sf023" className="btn-primary">
+                    Open SF-023 Form →
                   </a>
                 </div>
 

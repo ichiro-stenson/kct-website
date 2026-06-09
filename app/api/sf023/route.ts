@@ -4,14 +4,14 @@
  *  1. Validates fields
  *  2. Logs to Supabase (sf023_submissions)
  *  3. Generates filled PDF (pdf-lib)
- *  4. Creates DocuSign envelope for Josh's signature
- *  5. Returns success + envelope ID
+ *  4. Sends to Josh via Dropbox Sign for signature
+ *  5. Returns success + signature request ID
  */
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { generateSF023PDF, SF023Data } from '@/lib/sf023-pdf'
-import { createSF023Envelope } from '@/lib/docusign'
+import { createSF023SignatureRequest } from '@/lib/dropbox-sign'
 
 function getSb() {
   return createClient(
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     date,
     stationNameNumber,
     businessContactName,
-    employees,          // [{ name, vendorId }, ...]
+    employees,
     reason,
     reasonDetail,
     nonDrivingServices,
@@ -57,20 +57,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'A valid email address is required to receive the completed form.' }, { status: 400 })
   }
 
-  // ── Pre-fill KCT constants ───────────────────────────────────────────────────
+  // ── Build form data for PDF ──────────────────────────────────────────────────
   const formData: SF023Data = {
     date,
     stationNameNumber,
     serviceProviderName: 'King Capital Transport',
-    businessId:         process.env.KCT_BUSINESS_ID || 'V548',
+    businessId:          process.env.KCT_BUSINESS_ID || 'V548',
     authorizedOfficerName: 'Josh Stenson',
     businessContactName,
-    employees: (employees as any[]).slice(0, 3).filter(e => e?.name),
+    employees: (employees as any[]).slice(0, 3).filter((e: any) => e?.name),
     reason,
     reasonDetail:        reasonDetail || '',
     nonDrivingServices:  nonDrivingServices || undefined,
     printName:           'Josh Stenson',
-    signatureDate:       '',   // DocuSign fills this in
+    signatureDate:       '',  // Dropbox Sign fills this in
   }
 
   // ── Log to Supabase ──────────────────────────────────────────────────────────
@@ -78,25 +78,22 @@ export async function POST(req: NextRequest) {
   const { data: logRow, error: logErr } = await sb
     .from('sf023_submissions')
     .insert({
-      submitted_at:        new Date().toISOString(),
-      date_of_form:        date,
-      station_name_number: stationNameNumber,
-      business_contact:    businessContactName,
-      employee_names:      employees.map((e: any) => e.name).filter(Boolean),
+      submitted_at:         new Date().toISOString(),
+      date_of_form:         date,
+      station_name_number:  stationNameNumber,
+      business_contact:     businessContactName,
+      employee_names:       employees.map((e: any) => e.name).filter(Boolean),
       reason,
-      reason_detail:       reasonDetail || null,
+      reason_detail:        reasonDetail || null,
       non_driving_services: nonDrivingServices || null,
-      requester_email:     requesterEmail,
-      requester_name:      requesterName || '',
-      status:              'pending_signature',
+      requester_email:      requesterEmail,
+      requester_name:       requesterName || '',
+      status:               'pending_signature',
     })
     .select('id')
     .single()
 
-  if (logErr) {
-    console.error('SF023 Supabase log error:', logErr)
-    // Don't hard-fail — continue processing
-  }
+  if (logErr) console.error('SF023 Supabase log error:', logErr)
 
   const submissionId = logRow?.id?.toString() || `tmp-${Date.now()}`
 
@@ -109,12 +106,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Failed to generate PDF. Please try again.' }, { status: 500 })
   }
 
-  // ── Create DocuSign envelope ─────────────────────────────────────────────────
+  // ── Send via Dropbox Sign ────────────────────────────────────────────────────
   const employeeNames = formData.employees.map(e => e.name).join(', ')
-  let envelopeId: string
+  let signatureRequestId: string
 
   try {
-    const envelope = await createSF023Envelope({
+    const result = await createSF023SignatureRequest({
       pdfBytes,
       submissionId,
       requesterEmail,
@@ -122,27 +119,29 @@ export async function POST(req: NextRequest) {
       employeeNames,
       stationName: stationNameNumber,
     })
-    envelopeId = envelope.envelopeId
+    signatureRequestId = result.signatureRequestId
 
-    // Update Supabase with envelope ID
     if (logRow?.id) {
-      await sb.from('sf023_submissions').update({ envelope_id: envelopeId }).eq('id', logRow.id)
+      await sb.from('sf023_submissions')
+        .update({ envelope_id: signatureRequestId })
+        .eq('id', logRow.id)
     }
   } catch (err: any) {
-    console.error('SF023 DocuSign error:', err)
-    // Update Supabase with error
+    console.error('SF023 Dropbox Sign error:', err)
     if (logRow?.id) {
-      await sb.from('sf023_submissions').update({ status: 'docusign_error', error_msg: err.message }).eq('id', logRow.id)
+      await sb.from('sf023_submissions')
+        .update({ status: 'sign_error', error_msg: err.message })
+        .eq('id', logRow.id)
     }
     return NextResponse.json(
-      { error: 'Form saved but DocuSign signature could not be initiated. Our team has been notified.' },
+      { error: 'Form saved but the signature request could not be sent. Our team has been notified.' },
       { status: 500 }
     )
   }
 
   return NextResponse.json({
     success: true,
-    message: 'Your request has been submitted. Josh will review and sign the form — you will receive the completed document by email once signed.',
-    envelopeId,
+    message: 'Your request has been submitted. Josh will review and sign — you will receive the completed document by email once signed.',
+    signatureRequestId,
   })
 }

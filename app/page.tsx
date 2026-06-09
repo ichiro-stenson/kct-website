@@ -82,7 +82,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-              King Capital Transport is one of the fastest-growing FedEx Ground contractors in the Midwest, with 300+ team members across 6 locations. We&apos;re hiring drivers who want steady work, competitive pay, and a team that has their back.
+              King Capital Transport is one of the fastest-growing FedEx Ground contractors in the Midwest, with 150+ team members across 6 locations. We&apos;re hiring drivers who want steady work, competitive pay, and a team that has their back.
             </p>
 
             <div className="flex flex-wrap gap-4">

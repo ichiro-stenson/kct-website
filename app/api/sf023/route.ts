@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
   }
 
   const {
+    entity,
     date,
     stationNameNumber,
     businessContactName,
@@ -41,6 +42,9 @@ export async function POST(req: NextRequest) {
   } = body
 
   // ── Validation ──────────────────────────────────────────────────────────────
+  if (!['king_capital', 'kct_logistics'].includes(entity)) {
+    return NextResponse.json({ error: 'Please select a Service Provider Entity.' }, { status: 400 })
+  }
   if (!date || !stationNameNumber || !businessContactName) {
     return NextResponse.json({ error: 'Date, Station, and Business Contact are required.' }, { status: 400 })
   }
@@ -58,11 +62,17 @@ export async function POST(req: NextRequest) {
   }
 
   // ── Build form data for PDF ──────────────────────────────────────────────────
+  const ENTITY_MAP: Record<string, { name: string; businessId: string }> = {
+    king_capital: { name: 'King Capital Transport', businessId: 'V0020980' },
+    kct_logistics: { name: 'KCT Logistics',          businessId: 'V0024053' },
+  }
+  const entityInfo = ENTITY_MAP[entity]
+
   const formData: SF023Data = {
     date,
     stationNameNumber,
-    serviceProviderName: 'King Capital Transport',
-    businessId:          process.env.KCT_BUSINESS_ID || 'V548',
+    serviceProviderName: entityInfo.name,
+    businessId:          entityInfo.businessId,
     authorizedOfficerName: 'Josh Stenson',
     businessContactName,
     employees: (employees as any[]).slice(0, 3).filter((e: any) => e?.name),

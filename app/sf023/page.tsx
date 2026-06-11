@@ -21,6 +21,7 @@ interface Employee {
 export default function SF023Page() {
   const today = new Date().toISOString().split('T')[0]
 
+  const [entity, setEntity]             = useState<'king_capital' | 'kct_logistics' | ''>('')
   const [date, setDate]                 = useState(today)
   const [station, setStation]           = useState('')
   const [bizContact, setBizContact]     = useState('')
@@ -58,6 +59,7 @@ export default function SF023Page() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          entity,
           date,
           stationNameNumber: station,
           businessContactName: bizContact,
@@ -143,9 +145,29 @@ export default function SF023Page() {
               </div>
               <div className="p-6 space-y-5">
                 <div className="grid grid-cols-2 gap-4">
-                  <ReadOnlyField label="Service Provider Name" value="King Capital Transport" />
-                  <ReadOnlyField label="Authorized Officer" value="Josh Stenson" />
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
+                      Service Provider Entity <span className="text-[#E8142D]">*</span>
+                    </label>
+                    <select
+                      value={entity}
+                      onChange={e => setEntity(e.target.value as 'king_capital' | 'kct_logistics')}
+                      required
+                      className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E8142D]/40 focus:border-[#E8142D] bg-white"
+                    >
+                      <option value="">Select entity…</option>
+                      <option value="king_capital">King Capital Transport</option>
+                      <option value="kct_logistics">KCT Logistics</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">Business ID</label>
+                    <div className="w-full border border-gray-100 bg-gray-50 rounded-lg px-3 py-2.5 text-sm text-gray-500 select-none">
+                      {entity === 'king_capital' ? 'V0020980' : entity === 'kct_logistics' ? 'V0024053' : '—'}
+                    </div>
+                  </div>
                 </div>
+                <ReadOnlyField label="Authorized Officer" value="Josh Stenson" />
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-1.5">
@@ -371,7 +393,7 @@ export default function SF023Page() {
             {/* Submit */}
             <button
               type="submit"
-              disabled={loading || !reason}
+              disabled={loading || !reason || !entity}
               className="w-full bg-[#E8142D] hover:bg-red-700 disabled:bg-red-300 text-white font-bold py-4 rounded-xl text-base transition-colors shadow-md"
             >
               {loading ? (
@@ -383,7 +405,7 @@ export default function SF023Page() {
             </button>
 
             <p className="text-xs text-center text-gray-400 pb-4">
-              By submitting this form, you authorize King Capital Transport to file the SF-023 with FedEx Ground.
+              By submitting this form, you authorize {entity === 'kct_logistics' ? 'KCT Logistics' : 'King Capital Transport'} to file the SF-023 with FedEx Ground.
               This form will be signed by Josh Stenson (Authorized Officer) and returned to you via email.
             </p>
           </form>
